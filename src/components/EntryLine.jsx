@@ -1,17 +1,18 @@
-import React from 'react'
-import { Segment, Grid, Icon, Container, Button } from 'semantic-ui-react'
+import React from 'react';
+import { Segment, Grid, Icon, Container, Button } from 'semantic-ui-react';
+import { useDispatch } from 'react-redux';
+import { removeEntryRedux } from '../actions/entries.actions';
 function EntryLine(props) {
-    const
+    const {
+        id,
+        description,
+        value,
+        isExpense = false,
+        editEntry
+    } = props;
+    const dispatch = useDispatch();
 
-        {
-            id,
-            description,
-            value,
-            isExpense = false,
-            deleteEntry,
-            editEntry
-        }
-            = props;
+
     return (
         <Container>
             <Segment color={isExpense ? 'red' : 'green'}>
@@ -28,7 +29,7 @@ function EntryLine(props) {
                             </Button>
                             <Button
                                 className="ui icon button"
-                                onClick={() => deleteEntry(id)}
+                                onClick={() => dispatch(removeEntryRedux(id))}
                             >
                                 <Icon name='trash' />
                             </Button>

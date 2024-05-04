@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'semantic-ui-react';
 import EntryLine from './EntryLine';
 function EntryLines(props) {
-    const { entries, deleteEntry, editEntry } = props;
+    const { entries, editEntry } = props;
     return (
         <Container>
             {
@@ -10,7 +10,6 @@ function EntryLines(props) {
                     <EntryLine
                         key={entry.id}
                         {...entry}
-                        deleteEntry={deleteEntry}
                         editEntry={editEntry}
                     />
 
