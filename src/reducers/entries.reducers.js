@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 const reducer = (state = initialEntries, action) => {
     let newEntries;
     switch (action.type) {
@@ -5,7 +6,13 @@ const reducer = (state = initialEntries, action) => {
             newEntries = state.concat({ ...action.payload })
             return newEntries;
         case "REMOVE_ENTRY":
+            toast.success('Delete transaction succeed!');
             newEntries = state.filter(entry => entry.id !== action.payload.id);
+            return newEntries;
+        case "UPDATE_ENTRY":
+            newEntries = [...state];
+            const index = newEntries.findIndex(entry => entry.id === action.payload.id)
+            newEntries[index] = { ...action.payload.entry };
             return newEntries;
         default:
             return state;

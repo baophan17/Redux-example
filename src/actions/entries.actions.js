@@ -10,3 +10,9 @@ export const removeEntryRedux = (id) => {
         payload: { id },
     };
 }
+export const updateEntryRedux = (id, entry) => {
+    return {
+        type: "UPDATE_ENTRY",
+        payload: { id, entry },
+    };
+}
