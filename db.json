@@ -1,0 +1,34 @@
+{
+  "entries": [
+    {
+      "description": "Work income",
+      "value": 1000,
+      "isExpense": false,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "description": "Water bill",
+      "value": 223,
+      "isExpense": true
+    },
+    {
+      "id": 3,
+      "description": "Rent",
+      "value": 598,
+      "isExpense": false
+    },
+    {
+      "id": 4,
+      "description": "Power bill",
+      "value": 3211,
+      "isExpense": true
+    },
+    {
+      "id": 5,
+      "description": "new income",
+      "value": 100120,
+      "isExpense": false
+    }
+  ]
+}

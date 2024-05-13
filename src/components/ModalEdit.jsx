@@ -7,6 +7,7 @@ import useEntryDetails from '../hooks/useEntryDetails';
 
 function ModalEdit(props) {
     const {
+        id,
         isOpen,
         description,
         value,
@@ -29,7 +30,7 @@ function ModalEdit(props) {
             </Modal.Content>
             <Modal.Actions>
                 <Button onClick={() => dispatch(closeEditModal())}>Close</Button>
-                <Button onClick={() => dispatch(closeEditModal())} primary>Save</Button>
+                <Button onClick={() => entryUpdate.updateEntry(id)} primary>Save</Button>
             </Modal.Actions>
         </Modal>
     )
